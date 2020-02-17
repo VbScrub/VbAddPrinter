@@ -51,16 +51,16 @@ Public Class WinApi
     Public Const PRINTER_ENUM_LOCAL As Integer = 2
 
 
-    <DllImport("Winspool.drv", EntryPoint:="AddPrinterW")>
+     <DllImport("Winspool.drv", EntryPoint:="AddPrinterW", SetLastError:=True)>
     Public Shared Function AddPrinter(<InAttribute(), MarshalAs(UnmanagedType.LPWStr)> ByVal pName As String, ByVal Level As UInteger,
                                       <InAttribute()> ByRef pPrinter As PRINTER_INFO_2) As System.IntPtr
     End Function
 
-    <DllImport("Winspool.drv", EntryPoint:="ClosePrinter")>
+    <DllImport("Winspool.drv", EntryPoint:="ClosePrinter", SetLastError:=True)>
     Public Shared Function ClosePrinter(<InAttribute()> ByVal Handle As IntPtr) As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
 
-    <DllImport("Winspool.drv", EntryPoint:="EnumPrintersW")>
+    <DllImport("Winspool.drv", EntryPoint:="EnumPrintersW", SetLastError:=True)>
     Public Shared Function EnumPrintersW(ByVal Flags As UInteger, <InAttribute(), MarshalAs(UnmanagedType.LPWStr)> ByVal Name As String,
                                          ByVal Level As UInteger, ByVal pPrinterEnum As IntPtr, ByVal cbBuf As UInteger,
                                          <OutAttribute()> ByRef pcbNeeded As UInteger,
