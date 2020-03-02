@@ -23,7 +23,7 @@ Module MainModule
                     Console.Write("Printer successfully added")
                     WinApi.ClosePrinter(printerHandle)
                 Else
-                    Console.WriteLine("Failed with error code " & Marshal.GetLastWin32Error())
+                    Throw New ComponentModel.Win32Exception
                 End If
             ElseIf My.Application.CommandLineArgs(0).ToLower = "enum" Then
                 Dim NumberOfItems As UInteger
