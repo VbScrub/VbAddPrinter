@@ -4,8 +4,8 @@ Valid arguments:
 
 **VbAddPrinter.exe add printer_name driver_name port_name**
 
-Adds a new local printer
-Example:
+Adds a new local printer 
+Example: 
 VbAddPrinter.exe add "My Printer" "HP LaserJet 1100 PCL6" "lpt1:"
 
 
