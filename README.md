@@ -10,4 +10,4 @@ VbAddPrinter.exe enum
 
 Or
 
-VbAddPrinter.exe addunc \\server\printer
+VbAddPrinter.exe addunc \\\\server\\printer
